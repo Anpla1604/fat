@@ -1,0 +1,32 @@
+# Example data of food items and their fat content (in grams)
+food_items = {
+    "apple": 0.2,
+    "banana": 0.3,
+    "chicken breast": 3.6,
+    "salmon": 13.0,
+    "avocado": 15.0,
+    "almonds": 49.4
+}
+
+# Function to calculate the total fat
+def calculate_total_fat(consumed_food):
+    total_fat = 0.0
+    for food, quantity in consumed_food.items():
+        if food in food_items:
+            total_fat += food_items[food] * quantity
+        else:
+            print(f"Warning: {food} is not in the food items list.")
+    return total_fat
+
+# Example of consumed food items and their quantities (in servings)
+consumed_food = {
+    "apple": 2,
+    "banana": 1,
+    "chicken breast": 1,
+    "salmon": 1,
+    "avocado": 0.5,
+    "almonds": 0.1
+}
+
+total_fat = calculate_total_fat(consumed_food)
+print(f"Total fat consumed in a day: {total_fat} grams")
